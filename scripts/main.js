@@ -66,18 +66,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainNav = document.getElementById('menu-navegacao');
 
   if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', () => {
-      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !isExpanded);
-      mainNav.classList.toggle('is-active');
+    const toggleMenu = (forceState) => {
+      const isCurrentlyActive = mainNav.classList.contains('is-active');
+      const newState = typeof forceState === 'boolean' ? forceState : !isCurrentlyActive;
+      
+      menuToggle.setAttribute('aria-expanded', newState);
+      menuToggle.classList.toggle('is-active', newState);
+      mainNav.classList.toggle('is-active', newState);
+    };
+
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
     });
 
-    const navLinks = mainNav.querySelectorAll('.nav-link');
+    const navLinks = mainNav.querySelectorAll('.nav-link, .mobile-nav-extras a, .mobile-nav-extras button');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        menuToggle.setAttribute('aria-expanded', 'false');
-        mainNav.classList.remove('is-active');
+        toggleMenu(false);
       });
+    });
+
+    // Fechar ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (mainNav.classList.contains('is-active') && !mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
+        toggleMenu(false);
+      }
     });
   }
 
@@ -139,58 +153,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 8. Atelier de Encomendas (Caso Presente) ---
-  const sumPudimEl = document.getElementById('sum-pudim');
-  const btnWhatsAppEl = document.getElementById('btn-enviar-custom-whatsapp');
-  if (sumPudimEl && btnWhatsAppEl) {
-    const orderState = {
-      pudim: 'Pudim Tradicional de Fava',
-      tamanho: 'Aro Família (Aprox. 1.2kg - 8 a 10 fatias)',
-      salgado: 'Caixa Mista de Empadas Amanteigadas (6 unid)',
-      embalagem: 'Embalagem Especial Fagma com Calda Extra'
-    };
-
-    const sumTamanhoEl = document.getElementById('sum-tamanho');
-    const sumSalgadoEl = document.getElementById('sum-salgado');
-    const sumEmbalagemEl = document.getElementById('sum-embalagem');
-
-    const updateOrderSummary = () => {
-      if (sumPudimEl) sumPudimEl.textContent = orderState.pudim;
-      if (sumTamanhoEl) sumTamanhoEl.textContent = orderState.tamanho;
-      if (sumSalgadoEl) sumSalgadoEl.textContent = orderState.salgado;
-      if (sumEmbalagemEl) sumEmbalagemEl.textContent = orderState.embalagem;
-
-      const phone = '5565999999999';
-      const msg = `Olá, Fagma Cafeteria! Gostaria de fazer uma encomenda personalizada pelo site:\n\n` +
-                  `*Doçaria:* ${orderState.pudim}\n` +
-                  `*Tamanho / Porção:* ${orderState.tamanho}\n` +
-                  `*Salgados:* ${orderState.salgado}\n` +
-                  `*Apresentação:* ${orderState.embalagem}\n\n` +
-                  `Poderiam me informar os valores e a disponibilidade para agendamento?`;
-      
-      btnWhatsAppEl.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-    };
-
-    const pudimOptions = document.querySelectorAll('#opt-pudim-group .opt-card');
-    pudimOptions.forEach(opt => {
-      opt.addEventListener('click', () => {
-        pudimOptions.forEach(o => o.classList.remove('is-selected'));
-        opt.classList.add('is-selected');
-        orderState.pudim = opt.getAttribute('data-name');
-        updateOrderSummary();
-      });
-    });
-
-    updateOrderSummary();
-  }
-
-  // --- 9. Modal do Cardápio Completo ---
+  // --- 8. Modal do Cardápio Completo ---
   const modal = document.getElementById('modal-cardapio');
   const btnAbrirCardapioTop = document.getElementById('btn-abrir-cardapio-top');
+  const btnAbrirCardapioMobile = document.getElementById('btn-abrir-cardapio-mobile');
+  const btnMobileCardapio = document.getElementById('btn-mobile-cardapio');
   const btnFecharModal = document.getElementById('modal-fechar');
   const modalBackdrop = document.getElementById('modal-backdrop');
 
-  const abrirModal = () => {
+  const abrirModal = (e) => {
+    if (e) e.preventDefault();
     if (!modal) return;
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
@@ -207,6 +179,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (btnAbrirCardapioTop) {
     btnAbrirCardapioTop.addEventListener('click', abrirModal);
+  }
+  if (btnAbrirCardapioMobile) {
+    btnAbrirCardapioMobile.addEventListener('click', abrirModal);
+  }
+  if (btnMobileCardapio) {
+    btnMobileCardapio.addEventListener('click', abrirModal);
   }
 
   if (btnFecharModal) {

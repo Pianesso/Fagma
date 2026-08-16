@@ -91,17 +91,25 @@
         <ul class="nav-list">
           <li><a href="#vitrine" class="nav-link"><span class="nav-num">01</span> Vitrine Viva</a></li>
           <li><a href="#entrega" class="nav-link"><span class="nav-num">02</span> Região & Entrega</a></li>
+          <li><button class="nav-link nav-btn-modal" id="btn-abrir-cardapio-top"><span class="nav-num">03</span> Cardápio</button></li>
         </ul>
+        <div class="mobile-nav-extras">
+          <button class="btn btn-sm btn-outline btn-block" id="btn-abrir-cardapio-mobile">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
+            </svg>
+            <span>Ver Cardápio Completo</span>
+          </button>
+          <a href="https://www.ifood.com.br/delivery/cuiaba-mt/fagma-salgados--pudim-morada-da-serra/8c7d7dbd-b9e0-4331-9e78-69aac646c738?utm_medium=share" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ifood btn-block">
+            <span>Pedir no iFood</span>
+          </a>
+          <a href="https://wa.me/5565999450519?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20Fagma%20Cafeteria" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost btn-block">
+            <span>Falar no WhatsApp</span>
+          </a>
+        </div>
       </nav>
 
       <div class="header-actions">
-        <button class="btn btn-sm btn-outline header-menu-btn" id="btn-abrir-cardapio-top">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-            <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
-          </svg>
-          <span>Cardápio</span>
-        </button>
-        
         <a href="https://www.instagram.com/fagma_cafeteria?utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn-instagram-icon" aria-label="Instagram da Fagma">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -115,6 +123,7 @@
         </a>
 
         <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-navegacao" aria-label="Abrir menu de navegação">
+          <span class="menu-line"></span>
           <span class="menu-line"></span>
           <span class="menu-line"></span>
         </button>
@@ -134,9 +143,7 @@
         <p class="hero-eyebrow">Ateliê Artesanal &bull; Cuiabá &bull; Morada da Serra</p>
 
         <h1 class="hero-title">
-          O silêncio do banho-maria,<br>
-          o espelho da calda<br>
-          e a textura que derrete.
+          O silêncio do banho-maria, o espelho da calda e a textura que derrete.
         </h1>
 
         <p class="hero-lead">
@@ -1169,6 +1176,28 @@
       </div>
     </div>
   </footer>
+
+  <!-- Barra Flutuante Mobile de Ação Rápida (Exclusiva Mobile) -->
+  <div class="mobile-bottom-bar" id="mobile-bottom-bar" aria-label="Ações rápidas de pedido">
+    <button class="mobile-bar-btn" id="btn-mobile-cardapio" aria-label="Abrir Cardápio">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
+      </svg>
+      <span>Cardápio</span>
+    </button>
+    <a href="https://www.ifood.com.br/delivery/cuiaba-mt/fagma-salgados--pudim-morada-da-serra/8c7d7dbd-b9e0-4331-9e78-69aac646c738?utm_medium=share" target="_blank" rel="noopener noreferrer" class="mobile-bar-btn mobile-bar-ifood" aria-label="Pedir no iFood">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Pedir no iFood</span>
+    </a>
+    <a href="https://wa.me/5565999450519?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20Fagma%20Cafeteria" target="_blank" rel="noopener noreferrer" class="mobile-bar-btn mobile-bar-whatsapp" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
 
   <!-- Scripts -->
   <script type="module" src="scripts/main.js"></script>
