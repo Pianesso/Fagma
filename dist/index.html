@@ -63,8 +63,8 @@
     ]
   }
   </script>
-  <script type="module" crossorigin src="/assets/index-sQcQur7h.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-C6LxCJTz.css">
+  <script type="module" crossorigin src="/assets/index-BQSMeGp2.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CcGrspEt.css">
 </head>
 <body class="theme-emerald">
 
@@ -101,6 +101,14 @@
             </svg>
             <span>Ver Cardápio Completo</span>
           </button>
+                    <button class="btn btn-sm btn-outline btn-block" id="btn-abrir-carrinho-nav" style="border-color: var(--gold-border); color: var(--gold-light);">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span>Minha Sacola (<span id="cart-badge-nav">0</span>)</span>
+          </button>
           <a href="https://www.ifood.com.br/delivery/cuiaba-mt/fagma-salgados--pudim-morada-da-serra/8c7d7dbd-b9e0-4331-9e78-69aac646c738?utm_medium=share" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ifood btn-block">
             <span>Pedir no iFood</span>
           </a>
@@ -119,9 +127,25 @@
           </svg>
         </a>
 
-        <a href="https://www.ifood.com.br/delivery/cuiaba-mt/fagma-salgados--pudim-morada-da-serra/8c7d7dbd-b9e0-4331-9e78-69aac646c738?utm_medium=share" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ifood header-cta">
-          <span>Pedir no iFood</span>
+        <a href="https://wa.me/5565999450519?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Fagma%20Cafeteria" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-whatsapp header-cta-whatsapp" aria-label="Pedir no WhatsApp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span>WhatsApp</span>
         </a>
+
+        <a href="https://www.ifood.com.br/delivery/cuiaba-mt/fagma-salgados--pudim-morada-da-serra/8c7d7dbd-b9e0-4331-9e78-69aac646c738?utm_medium=share" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ifood header-cta" aria-label="Pedir no iFood">
+          <span>iFood</span>
+        </a>
+
+        <button class="btn-header-cart" id="btn-abrir-carrinho-header" aria-label="Abrir Sacola de Pedidos">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge" id="cart-badge-header" style="display: none;">0</span>
+        </button>
 
         <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu-navegacao" aria-label="Abrir menu de navegação">
           <span class="menu-line"></span>
@@ -141,7 +165,7 @@
 
       <div class="container hero-center">
 
-        <p class="hero-eyebrow">Ateliê Artesanal &bull; Cuiabá &bull; Morada da Serra</p>
+        <p class="hero-eyebrow">Faça seu pedido no iFood ou pelo WhatsApp &bull; Ateliê Artesanal Cuiabá</p>
 
         <h1 class="hero-title">
           O silêncio do banho-maria, o espelho da calda e a textura que derrete.
@@ -160,16 +184,14 @@
               <path d="M4 10h12M11 5l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
+          <a href="https://wa.me/5565999450519?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Fagma%20Cafeteria" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg magnetic-target">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            <span>Pedir no WhatsApp</span>
+          </a>
           <a href="#vitrine" class="btn btn-ghost btn-lg magnetic-target">
             <span>Explorar Vitrine</span>
-          </a>
-          <a href="https://www.instagram.com/fagma_cafeteria?utm_source=qr" target="_blank" rel="noopener noreferrer" class="btn btn-insta btn-lg magnetic-target" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-            </svg>
-            <span>Instagram</span>
           </a>
         </div>
 
@@ -213,13 +235,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Pudim Especial</span>
-                <span class="item-batch-stamp">Serve 1 pessoa</span>
               </div>
               <h3 class="item-title">Pudim de 4 Leites Mini/Individual</h3>
               <p class="item-desc">Delicioso e cremoso pudim de 4 leites, feito com leite condensado Moça, leite de coco, creme de leite e leite integral.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 20,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Pudim de 4 Leites Mini/Individual" data-price="20.00" data-img="assets/images/pudim-4-leites.jpg" aria-label="Adicionar Pudim de 4 Leites Mini/Individual ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -231,13 +256,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Pudim de Café</span>
-                <span class="item-batch-stamp">Serve 4 pessoas</span>
               </div>
               <h3 class="item-title">Pudim de Café 1,100kg</h3>
               <p class="item-desc">Delicioso e cremoso pudim, feito com café e leite condensado Moça com calda especial.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 130,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Pudim de Café 1,100kg" data-price="130.00" data-img="assets/images/pudim-cafe-1kg.jpg" aria-label="Adicionar Pudim de Café 1,100kg ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -249,13 +277,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Pudim de Café</span>
-                <span class="item-batch-stamp">Serve 4 pessoas</span>
               </div>
               <h3 class="item-title">Pudim de Café Médio</h3>
               <p class="item-desc">Delicioso e cremoso pudim, feito com café selecionado e leite condensado Moça.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 80,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Pudim de Café Médio" data-price="80.00" data-img="assets/images/pudim-cafe-medio.jpg" aria-label="Adicionar Pudim de Café Médio ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -267,13 +298,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Pudim de Café</span>
-                <span class="item-batch-stamp">Serve 1 pessoa</span>
               </div>
               <h3 class="item-title">Pudim de Café Mini/Individual</h3>
               <p class="item-desc">Delicioso e cremoso pudim, feito com café e leite condensado Moça.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 20,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Pudim de Café Mini/Individual" data-price="20.00" data-img="assets/images/pudim-cafe-mini.jpg" aria-label="Adicionar Pudim de Café Mini/Individual ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -286,13 +320,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Pudim Gourmet</span>
-                <span class="item-batch-stamp">Serve 1 pessoa</span>
               </div>
               <h3 class="item-title">Tradicional 120g</h3>
               <p class="item-desc">Delicioso pudim gourmet, sabor tradicional, individual.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 20,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Tradicional 120g" data-price="20.00" data-img="assets/images/pudim-tradicional-120g.jpg" aria-label="Adicionar Tradicional 120g ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -305,13 +342,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Salgado Assado</span>
-                <span class="item-batch-stamp">Fornada do Dia</span>
               </div>
               <h3 class="item-title">Cachorro Quente Assado</h3>
               <p class="item-desc">Massa assada dourada e macia, recheio caprichado com queijo, salsicha nobre e batata palha.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 15,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Cachorro Quente Assado" data-price="15.00" data-img="assets/images/cachorro-quente.jpg" aria-label="Adicionar Cachorro Quente Assado ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -328,7 +368,11 @@
               <p class="item-desc">Massa amanteigada tradicional que desmancha a cada mordida, com recheio cremoso e farto.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 19,98</span>
-              </div>
+              <button class="btn-add-cart" data-name="Empadinha Recheada" data-price="19.98" data-img="assets/images/empadinha.jpg" aria-label="Adicionar Empadinha Recheada ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -345,7 +389,11 @@
               <p class="item-desc">Pão italiano artesanal recheado com presunto selecionado, queijo derretido, orégano e tomate fresco.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 15,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Pão Italiano" data-price="15.00" data-img="assets/images/pao-italiano.jpg" aria-label="Adicionar Pão Italiano ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -362,7 +410,11 @@
               <p class="item-desc">Massa fofa assada ao forno coberta com gergelim, hambúrguer suculento e queijo derretido.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 15,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Hambúrguer Assado Especial" data-price="15.00" data-img="assets/images/hamburguer.jpg" aria-label="Adicionar Hambúrguer Assado Especial ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -379,7 +431,11 @@
               <p class="item-desc">Massa assada bem fofinha e dourada envolvendo salsicha nobre com tempero especial da casa.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 15,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Enroladinho de Salsicha" data-price="15.00" data-img="assets/images/enroladinho-salsicha.jpg" aria-label="Adicionar Enroladinho de Salsicha ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -396,7 +452,11 @@
               <p class="item-desc">Massa fininha e leve, recheio farto de carne moída suculenta temperada com especiarias e limão.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 15,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Esfirra de Carne" data-price="15.00" data-img="assets/images/esfirra-carne.jpg" aria-label="Adicionar Esfirra de Carne ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -413,7 +473,11 @@
               <p class="item-desc">Uma fatia generosa de torta de frango assada com requeijão cremoso e queijo mussarela.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 15,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Torta de Frango Assada" data-price="15.00" data-img="assets/images/torta-frango.jpg" aria-label="Adicionar Torta de Frango Assada ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -425,13 +489,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Salgado Frito</span>
-                <span class="item-batch-stamp">Serve 1 pessoa</span>
               </div>
               <h3 class="item-title">Coxinha de Carne</h3>
               <p class="item-desc">Casquinha ultra crocante e sequinha, recheada com carne desfiada suculenta e tempero especial.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 14,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Coxinha de Carne" data-price="14.00" data-img="assets/images/coxinha-carne.jpg" aria-label="Adicionar Coxinha de Carne ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -448,7 +515,11 @@
               <p class="item-desc">Kibe frito crocante e bem temperado com hortelã fresca, recheado com ovo inteiro.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 13,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Kibe de Ovo" data-price="13.00" data-img="assets/images/kibe-ovo.jpg" aria-label="Adicionar Kibe de Ovo ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -465,7 +536,11 @@
               <p class="item-desc">Massa tradicional de trigo para kibe e carne selecionada temperada com especiarias e hortelã.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 13,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Kibe Tradicional" data-price="13.00" data-img="assets/images/kibe-tradicional.jpg" aria-label="Adicionar Kibe Tradicional ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -477,13 +552,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Bebida</span>
-                <span class="item-batch-stamp">Garrafa 500ml</span>
               </div>
               <h3 class="item-title">Água Mineral Puríssima 500ml</h3>
               <p class="item-desc">Água mineral natural sem gás, refrescante e pura.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 8,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Água Mineral Puríssima 500ml" data-price="8.00" data-img="assets/images/agua-sem-gas.jpg" aria-label="Adicionar Água Mineral Puríssima 500ml ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -495,13 +573,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Bebida</span>
-                <span class="item-batch-stamp">Garrafa 500ml</span>
               </div>
               <h3 class="item-title">Água Mineral Puríssima com Gás 500ml</h3>
               <p class="item-desc">Água mineral gaseificada refrescante.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 8,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Água Mineral Puríssima com Gás 500ml" data-price="8.00" data-img="assets/images/agua-com-gas.jpg" aria-label="Adicionar Água Mineral Puríssima com Gás 500ml ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -513,13 +594,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Refrigerante</span>
-                <span class="item-batch-stamp">Lata 310ml</span>
               </div>
               <h3 class="item-title">Coca Cola 310ml</h3>
               <p class="item-desc">Coca-Cola sabor original geladinha.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 10,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Coca Cola 310ml" data-price="10.00" data-img="assets/images/coca-cola-310ml.jpg" aria-label="Adicionar Coca Cola 310ml ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -531,13 +615,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Refrigerante Zero</span>
-                <span class="item-batch-stamp">Lata 350ml</span>
               </div>
               <h3 class="item-title">Refrigerante Coca Cola Lata Zero</h3>
               <p class="item-desc">Coca-Cola Sem Açúcar gelada.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 10,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Refrigerante Coca Cola Lata Zero" data-price="10.00" data-img="assets/images/coca-zero-350ml.jpg" aria-label="Adicionar Refrigerante Coca Cola Lata Zero ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -549,13 +636,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Refrigerante</span>
-                <span class="item-batch-stamp">Lata 269ml</span>
               </div>
               <h3 class="item-title">Refrigerante Guaraná Antarctica</h3>
               <p class="item-desc">O autêntico sabor brasileiro bem gelado.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 10,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Refrigerante Guaraná Antarctica" data-price="10.00" data-img="assets/images/guarana-antarctica.jpg" aria-label="Adicionar Refrigerante Guaraná Antarctica ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -567,13 +657,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Refrigerante</span>
-                <span class="item-batch-stamp">Lata 310ml</span>
               </div>
               <h3 class="item-title">Fanta Laranja 310ml</h3>
               <p class="item-desc">Refrigerante sabor laranja super refrescante.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 10,00</span>
-              </div>
+              <button class="btn-add-cart" data-name="Fanta Laranja 310ml" data-price="10.00" data-img="assets/images/fanta-laranja-310ml.jpg" aria-label="Adicionar Fanta Laranja 310ml ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -585,13 +678,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Bebida Especial</span>
-                <span class="item-batch-stamp">Lata 350ml</span>
               </div>
               <h3 class="item-title">Schweppes Citrus Leve em Açúcares</h3>
               <p class="item-desc">Combinação equilibrada e cítrica refrescante.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 9,98</span>
-              </div>
+              <button class="btn-add-cart" data-name="Schweppes Citrus Leve em Açúcares" data-price="9.98" data-img="assets/images/schweppes-citrus.jpg" aria-label="Adicionar Schweppes Citrus Leve em Açúcares ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -603,13 +699,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Água Tônica</span>
-                <span class="item-batch-stamp">Lata 310ml</span>
               </div>
               <h3 class="item-title">Schweppes Tônica 310ml</h3>
               <p class="item-desc">Água tônica clássica e aromática.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 9,85</span>
-              </div>
+              <button class="btn-add-cart" data-name="Schweppes Tônica 310ml" data-price="9.85" data-img="assets/images/schweppes-tonica.jpg" aria-label="Adicionar Schweppes Tônica 310ml ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -621,13 +720,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Suco</span>
-                <span class="item-batch-stamp">Lata 290ml</span>
               </div>
               <h3 class="item-title">Suco Del Valle Maracujá 290ml</h3>
               <p class="item-desc">Suco de maracujá doce e saboroso.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 9,70</span>
-              </div>
+              <button class="btn-add-cart" data-name="Suco Del Valle Maracujá 290ml" data-price="9.70" data-img="assets/images/del-valle-maracuja.jpg" aria-label="Adicionar Suco Del Valle Maracujá 290ml ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -639,13 +741,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Suco</span>
-                <span class="item-batch-stamp">Lata 290ml</span>
               </div>
               <h3 class="item-title">Suco Del Valle Néctar Uva 290ml</h3>
               <p class="item-desc">Suco néctar de uva delicioso.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 9,98</span>
-              </div>
+              <button class="btn-add-cart" data-name="Suco Del Valle Néctar Uva 290ml" data-price="9.98" data-img="assets/images/del-valle-uva.jpg" aria-label="Adicionar Suco Del Valle Néctar Uva 290ml ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -657,13 +762,16 @@
             <div class="showcase-item-content">
               <div class="item-meta-top">
                 <span class="item-category">Suco</span>
-                <span class="item-batch-stamp">Lata 290ml</span>
               </div>
               <h3 class="item-title">Suco Del Valle Pêssego 290ml</h3>
               <p class="item-desc">Néctar suave e doce de pêssego.</p>
               <div class="product-price-row">
                 <span class="price-value">R$ 9,68</span>
-              </div>
+              <button class="btn-add-cart" data-name="Suco Del Valle Pêssego 290ml" data-price="9.68" data-img="assets/images/del-valle-pessego.jpg" aria-label="Adicionar Suco Del Valle Pêssego 290ml ao carrinho">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Adicionar</span>
+              </button>
+            </div>
             </div>
           </article>
 
@@ -682,7 +790,7 @@
             <span class="section-kicker">Canais & Logística Segura</span>
             <h2 class="section-heading">Da nossa cozinha na Morada da Serra para sua mesa.</h2>
             <p class="delivery-desc">
-              Transportar um pudim com textura aveludada e calda fluida exige embalagens estruturadas de alto padrão para manter a integridade visual e a temperatura perfeita. Nossos pedidos são realizados exclusivamente pelo aplicativo do iFood.
+              Transportar um pudim com textura aveludada e calda fluida exige embalagens estruturadas de alto padrão para manter a integridade visual e a temperatura perfeita. Faça seu pedido diretamente pelo iFood ou pelo WhatsApp com delivery ou retirada no ateliê.
             </p>
 
             <div class="delivery-perks">
@@ -708,8 +816,8 @@
                   </svg>
                 </span>
                 <div>
-                  <strong>Entrega Exclusiva pelo iFood</strong>
-                  <span>Entregas ágeis e rastreadas com total segurança</span>
+                  <strong>Delivery Rápido & Seguro</strong>
+                  <span>Entregas ágeis e rastreadas por toda a região de Cuiabá</span>
                 </div>
               </div>
             </div>
@@ -719,14 +827,27 @@
             
             <div class="delivery-method-card highlight-method">
               <div class="method-header">
-                <span class="method-badge gold-badge">Oficial</span>
-                <h3 class="method-title">Loja Oficial no iFood</h3>
+                <span class="method-badge gold-badge">iFood Oficial</span>
+                <h3 class="method-title">Pedir pelo iFood</h3>
               </div>
               <p class="method-desc">
-                Acesse agora o cardápio completo da Fagma Cafeteria no iFood, consulte as fornadas disponíveis e receba com rapidez.
+                Acesse o cardápio oficial da Fagma Cafeteria no iFood, consulte as fornadas disponíveis do dia e receba com rapidez.
               </p>
               <a href="https://www.ifood.com.br/delivery/cuiaba-mt/fagma-salgados--pudim-morada-da-serra/8c7d7dbd-b9e0-4331-9e78-69aac646c738?utm_medium=share" target="_blank" rel="noopener noreferrer" class="btn btn-ifood btn-block">
-                Fazer Pedido no iFood &rarr;
+                <span>Fazer Pedido no iFood &rarr;</span>
+              </a>
+            </div>
+
+            <div class="delivery-method-card" style="margin-top: 1rem;">
+              <div class="method-header">
+                <span class="method-badge gold-badge" style="background: rgba(37, 211, 102, 0.15); border-color: rgba(37, 211, 102, 0.4); color: #25d366;">WhatsApp Oficial</span>
+                <h3 class="method-title">Pedir pelo WhatsApp</h3>
+              </div>
+              <p class="method-desc">
+                Monte seu pedido online usando nossa Sacola de Compras ou fale diretamente com a nossa equipe para encomendas personalizadas.
+              </p>
+              <a href="https://wa.me/5565999450519?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido%20na%20Fagma%20Cafeteria" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-block">
+                <span>Fazer Pedido no WhatsApp &rarr;</span>
               </a>
             </div>
 
@@ -770,6 +891,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 20,00</span>
+              <button class="btn-add-modal" data-name="Pudim de 4 Leites Mini/Individual" data-price="20.00" aria-label="Adicionar Pudim de 4 Leites Mini/Individual ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -780,6 +902,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 130,00</span>
+              <button class="btn-add-modal" data-name="Pudim de Café 1,100kg" data-price="130.00" aria-label="Adicionar Pudim de Café 1,100kg ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -790,6 +913,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 80,00</span>
+              <button class="btn-add-modal" data-name="Pudim de Café Médio" data-price="80.00" aria-label="Adicionar Pudim de Café Médio ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -800,6 +924,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 20,00</span>
+              <button class="btn-add-modal" data-name="Pudim de Café Mini/Individual" data-price="20.00" aria-label="Adicionar Pudim de Café Mini/Individual ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -810,6 +935,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 20,00</span>
+              <button class="btn-add-modal" data-name="Tradicional 120g" data-price="20.00" aria-label="Adicionar Tradicional 120g ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -820,6 +946,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 70,00</span>
+              <button class="btn-add-modal" data-name="Pudim Gourmet Tradicional 500g" data-price="70.00" aria-label="Adicionar Pudim Gourmet Tradicional 500g ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -830,6 +957,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 120,00</span>
+              <button class="btn-add-modal" data-name="Pudim Gourmet Tradicional 1,100kg" data-price="120.00" aria-label="Adicionar Pudim Gourmet Tradicional 1,100kg ao carrinho">+ Adicionar</button>
             </div>
           </div>
         </div>
@@ -845,6 +973,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 15,00</span>
+              <button class="btn-add-modal" data-name="Cachorro Quente Assado" data-price="15.00" aria-label="Adicionar Cachorro Quente Assado ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -855,6 +984,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 19,98</span>
+              <button class="btn-add-modal" data-name="Empadinha Recheada" data-price="19.98" aria-label="Adicionar Empadinha Recheada ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -865,6 +995,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 15,00</span>
+              <button class="btn-add-modal" data-name="Pão Italiano" data-price="15.00" aria-label="Adicionar Pão Italiano ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -875,6 +1006,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 15,00</span>
+              <button class="btn-add-modal" data-name="Hambúrguer Assado Especial" data-price="15.00" aria-label="Adicionar Hambúrguer Assado Especial ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -885,6 +1017,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 15,00</span>
+              <button class="btn-add-modal" data-name="Enroladinho de Salsicha" data-price="15.00" aria-label="Adicionar Enroladinho de Salsicha ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -895,6 +1028,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 15,00</span>
+              <button class="btn-add-modal" data-name="Esfirra de Carne" data-price="15.00" aria-label="Adicionar Esfirra de Carne ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -905,6 +1039,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 15,00</span>
+              <button class="btn-add-modal" data-name="Torta de Frango Assada (Fatia)" data-price="15.00" aria-label="Adicionar Torta de Frango Assada (Fatia) ao carrinho">+ Adicionar</button>
             </div>
           </div>
         </div>
@@ -920,6 +1055,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 14,00</span>
+              <button class="btn-add-modal" data-name="Coxinha de Carne" data-price="14.00" aria-label="Adicionar Coxinha de Carne ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -930,6 +1066,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 13,00</span>
+              <button class="btn-add-modal" data-name="Kibe de Ovo" data-price="13.00" aria-label="Adicionar Kibe de Ovo ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -940,6 +1077,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 13,00</span>
+              <button class="btn-add-modal" data-name="Kibe Tradicional" data-price="13.00" aria-label="Adicionar Kibe Tradicional ao carrinho">+ Adicionar</button>
             </div>
           </div>
         </div>
@@ -955,6 +1093,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 8,00</span>
+              <button class="btn-add-modal" data-name="Água Mineral Puríssima 500ml" data-price="8.00" aria-label="Adicionar Água Mineral Puríssima 500ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -965,6 +1104,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 8,00</span>
+              <button class="btn-add-modal" data-name="Água Mineral Puríssima com Gás 500ml" data-price="8.00" aria-label="Adicionar Água Mineral Puríssima com Gás 500ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -975,6 +1115,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 10,00</span>
+              <button class="btn-add-modal" data-name="Coca Cola 310ml" data-price="10.00" aria-label="Adicionar Coca Cola 310ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -985,6 +1126,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 10,00</span>
+              <button class="btn-add-modal" data-name="Refrigerante Coca Cola Lata Zero 350ml" data-price="10.00" aria-label="Adicionar Refrigerante Coca Cola Lata Zero 350ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -995,6 +1137,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 10,00</span>
+              <button class="btn-add-modal" data-name="Refrigerante Guaraná Antarctica 269ml" data-price="10.00" aria-label="Adicionar Refrigerante Guaraná Antarctica 269ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -1005,6 +1148,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 10,00</span>
+              <button class="btn-add-modal" data-name="Fanta Laranja 310ml" data-price="10.00" aria-label="Adicionar Fanta Laranja 310ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -1015,6 +1159,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 9,98</span>
+              <button class="btn-add-modal" data-name="Schweppes Citrus Leve em Açúcares 350ml" data-price="9.98" aria-label="Adicionar Schweppes Citrus Leve em Açúcares 350ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -1025,6 +1170,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 9,85</span>
+              <button class="btn-add-modal" data-name="Schweppes Tônica 310ml" data-price="9.85" aria-label="Adicionar Schweppes Tônica 310ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -1035,6 +1181,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 9,70</span>
+              <button class="btn-add-modal" data-name="Suco Del Valle Maracujá 290ml" data-price="9.70" aria-label="Adicionar Suco Del Valle Maracujá 290ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -1045,6 +1192,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 9,98</span>
+              <button class="btn-add-modal" data-name="Suco Del Valle Néctar Uva 290ml" data-price="9.98" aria-label="Adicionar Suco Del Valle Néctar Uva 290ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
 
@@ -1055,6 +1203,7 @@
             </div>
             <div class="menu-price-tag">
               <span class="price-value">R$ 9,68</span>
+              <button class="btn-add-modal" data-name="Suco Del Valle Pêssego 290ml" data-price="9.68" aria-label="Adicionar Suco Del Valle Pêssego 290ml ao carrinho">+ Adicionar</button>
             </div>
           </div>
         </div>
@@ -1178,6 +1327,25 @@
     </div>
   </footer>
 
+  
+  <!-- Barra Flutuante de Sacola (Desktop) -->
+  <div class="floating-cart-pill" id="floating-cart-pill" aria-label="Ver sacola de pedidos">
+    <button class="floating-cart-btn" id="btn-floating-cart">
+      <div class="floating-cart-info">
+        <span class="floating-cart-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge" id="cart-badge-float" style="display: none;">0</span>
+        </span>
+        <span class="floating-cart-text" id="floating-cart-text">Ver Sacola</span>
+      </div>
+      <span class="floating-cart-total" id="floating-cart-total">R$ 0,00</span>
+    </button>
+  </div>
+
   <!-- Barra Flutuante Mobile de Ação Rápida (Exclusiva Mobile) -->
   <div class="mobile-bottom-bar" id="mobile-bottom-bar" aria-label="Ações rápidas de pedido">
     <button class="mobile-bar-btn" id="btn-mobile-cardapio" aria-label="Abrir Cardápio">
@@ -1186,19 +1354,139 @@
       </svg>
       <span>Cardápio</span>
     </button>
+    <button class="mobile-bar-btn mobile-bar-cart" id="btn-mobile-carrinho" aria-label="Abrir Sacola de Pedidos">
+      <span class="mobile-bar-cart-icon-wrap">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="cart-count-badge" id="cart-badge-mobile" style="display: none;">0</span>
+      </span>
+      <span>Sacola</span>
+    </button>
     <a href="https://www.ifood.com.br/delivery/cuiaba-mt/fagma-salgados--pudim-morada-da-serra/8c7d7dbd-b9e0-4331-9e78-69aac646c738?utm_medium=share" target="_blank" rel="noopener noreferrer" class="mobile-bar-btn mobile-bar-ifood" aria-label="Pedir no iFood">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span>Pedir no iFood</span>
+      <span>iFood</span>
     </a>
     <a href="https://wa.me/5565999450519?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20Fagma%20Cafeteria" target="_blank" rel="noopener noreferrer" class="mobile-bar-btn mobile-bar-whatsapp" aria-label="WhatsApp">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
       </svg>
-      <span>WhatsApp</span>
+      <span>Whats</span>
     </a>
   </div>
+
+  <!-- Drawer / Modal Lateral do Carrinho de Pedidos -->
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title-group">
+        <div class="cart-header-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="cart-drawer-title" id="cart-drawer-title">Sua Sacola de Pedidos</h2>
+          <span class="cart-drawer-subtitle" id="cart-drawer-items-count">0 itens selecionados</span>
+        </div>
+      </div>
+      <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Fechar Sacola">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="cart-drawer-body">
+      <!-- Lista de Itens -->
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Inserido dinamicamente via JS -->
+      </div>
+
+      <!-- Opções do Pedido (Dados para Envio via WhatsApp) -->
+      <div class="cart-checkout-form" id="cart-checkout-form">
+        <h3 class="cart-form-heading">Informações para Envio do Pedido</h3>
+        
+        <div class="cart-form-field">
+          <label for="cart-input-name" class="cart-label">Seu Nome</label>
+          <input type="text" id="cart-input-name" class="cart-input" placeholder="Ex: Maria Silva" autocomplete="name">
+        </div>
+
+        <div class="cart-form-field">
+          <label class="cart-label">Tipo de Pedido</label>
+          <div class="cart-delivery-toggle">
+            <label class="cart-toggle-option">
+              <input type="radio" name="cart-order-type" value="delivery" checked id="cart-type-delivery">
+              <span class="cart-toggle-btn">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                Entrega / Delivery
+              </span>
+            </label>
+            <label class="cart-toggle-option">
+              <input type="radio" name="cart-order-type" value="retirada" id="cart-type-pickup">
+              <span class="cart-toggle-btn">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Retirar no Ateliê
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="cart-form-field" id="cart-address-group">
+          <label for="cart-input-address" class="cart-label">Endereço de Entrega (Cuiabá)</label>
+          <input type="text" id="cart-input-address" class="cart-input" placeholder="Bairro, Rua, Número e Referência">
+        </div>
+
+        <div class="cart-form-field">
+          <label for="cart-input-payment" class="cart-label">Forma de Pagamento</label>
+          <select id="cart-input-payment" class="cart-select">
+            <option value="Pix">Pix (Chave informada no WhatsApp)</option>
+            <option value="Cartão de Crédito">Cartão de Crédito</option>
+            <option value="Cartão de Débito">Cartão de Débito</option>
+            <option value="Dinheiro">Dinheiro</option>
+          </select>
+        </div>
+
+        <div class="cart-form-field">
+          <label for="cart-input-notes" class="cart-label">Observações (Opcional)</label>
+          <textarea id="cart-input-notes" class="cart-textarea" rows="2" placeholder="Ex: Ponto da calda, sem cebola, troco para R$ 50..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span class="cart-summary-label">Subtotal</span>
+        <span class="cart-summary-value" id="cart-subtotal-val">R$ 0,00</span>
+      </div>
+      <div class="cart-summary-row cart-total-row">
+        <span class="cart-total-label">Total do Pedido</span>
+        <span class="cart-total-value" id="cart-total-val">R$ 0,00</span>
+      </div>
+      
+      <button class="btn btn-whatsapp-order btn-block" id="btn-finalizar-whatsapp">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        <span>Enviar Pedido pelo WhatsApp</span>
+      </button>
+
+      <div class="cart-drawer-actions">
+        <button class="cart-clear-btn" id="btn-limpar-carrinho">Esvaziar Sacola</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Toast de Notificação -->
+  <div class="cart-toast" id="cart-toast" aria-live="polite"></div>
+
 
   <!-- Scripts -->
 </body>
