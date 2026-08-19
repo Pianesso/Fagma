@@ -212,6 +212,57 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   const WHATSAPP_NUMBER = '5565999450519';
 
+  // Catálogo completo de imagens de fallback para o carrinho
+  const PRODUCT_IMAGE_MAP = {
+    'pudim de 4 leites mini/individual': 'assets/images/pudim-4-leites.jpg',
+    'pudim de 4 leites mini': 'assets/images/pudim-4-leites.jpg',
+    'pudim de café 1,100kg': 'assets/images/pudim-cafe-1kg.jpg',
+    'pudim de café 1kg': 'assets/images/pudim-cafe-1kg.jpg',
+    'pudim de café médio': 'assets/images/pudim-cafe-medio.jpg',
+    'pudim de café mini/individual': 'assets/images/pudim-cafe-mini.jpg',
+    'pudim de café mini': 'assets/images/pudim-cafe-mini.jpg',
+    'tradicional 120g': 'assets/images/pudim-tradicional-120g.jpg',
+    'pudim gourmet tradicional 500g': 'assets/images/pudim-gourmet-500g.jpg',
+    'pudim gourmet tradicional 1,100kg': 'assets/images/pudim-gourmet-1kg.jpg',
+    'pudim gourmet tradicional 1kg': 'assets/images/pudim-gourmet-1kg.jpg',
+    'cachorro quente assado': 'assets/images/cachorro-quente.jpg',
+    'empadinha recheada': 'assets/images/empadinha.jpg',
+    'pão italiano': 'assets/images/pao-italiano.jpg',
+    'hambúrguer assado especial': 'assets/images/hamburguer.jpg',
+    'hambúrguer assado': 'assets/images/hamburguer.jpg',
+    'enroladinho de salsicha': 'assets/images/enroladinho-salsicha.jpg',
+    'esfirra de carne': 'assets/images/esfirra-carne.jpg',
+    'torta de frango assada': 'assets/images/torta-frango.jpg',
+    'torta de frango assada (fatia)': 'assets/images/torta-frango.jpg',
+    'coxinha de carne': 'assets/images/coxinha-carne.jpg',
+    'kibe de ovo': 'assets/images/kibe-ovo.jpg',
+    'kibe tradicional': 'assets/images/kibe-tradicional.jpg',
+    'água mineral puríssima 500ml': 'assets/images/agua-sem-gas.jpg',
+    'água mineral puríssima com gás 500ml': 'assets/images/agua-com-gas.jpg',
+    'coca cola 310ml': 'assets/images/coca-cola-310ml.jpg',
+    'refrigerante coca cola lata zero 350ml': 'assets/images/coca-zero-350ml.jpg',
+    'refrigerante guaraná antarctica 269ml': 'assets/images/guarana-antarctica.jpg',
+    'fanta laranja 310ml': 'assets/images/fanta-laranja-310ml.jpg',
+    'schweppes citrus leve em açúcares 350ml': 'assets/images/schweppes-citrus.jpg',
+    'schweppes tônica 310ml': 'assets/images/schweppes-tonica.jpg',
+    'suco del valle maracujá 290ml': 'assets/images/del-valle-maracuja.jpg',
+    'suco del valle néctar uva 290ml': 'assets/images/del-valle-uva.jpg',
+    'suco del valle pêssego 290ml': 'assets/images/del-valle-pessego.jpg'
+  };
+
+  const resolveProductImage = (name, img) => {
+    if (img && img.trim().length > 0) return img;
+    if (!name) return 'assets/images/logo.png';
+    const key = name.toLowerCase().trim();
+    if (PRODUCT_IMAGE_MAP[key]) return PRODUCT_IMAGE_MAP[key];
+    for (const [mapKey, mapImg] of Object.entries(PRODUCT_IMAGE_MAP)) {
+      if (key.includes(mapKey) || mapKey.includes(key)) {
+        return mapImg;
+      }
+    }
+    return 'assets/images/logo.png';
+  };
+
   // Utilitários de Preço
   const parsePrice = (priceVal) => {
     if (typeof priceVal === 'number') return priceVal;
@@ -238,8 +289,15 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const saved = localStorage.getItem('fagma_cart');
       if (saved) {
-        cart = JSON.parse(saved);
-        if (!Array.isArray(cart)) cart = [];
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          cart = parsed.map(item => ({
+            ...item,
+            img: resolveProductImage(item.name, item.img)
+          }));
+        } else {
+          cart = [];
+        }
       }
     } catch (err) {
       console.warn('Erro ao carregar carrinho local:', err);
@@ -434,29 +492,32 @@ document.addEventListener('DOMContentLoaded', () => {
       if (cartCheckoutForm) cartCheckoutForm.style.display = 'block';
       if (cartDrawerFooter) cartDrawerFooter.style.display = 'block';
 
-      cartItemsList.innerHTML = cart.map(item => `
-        <div class="cart-item-row" data-id="${item.id}">
-          ${item.img ? `<img src="${item.img}" alt="${item.name}" class="cart-item-img" loading="lazy">` : ''}
-          <div class="cart-item-info">
-            <h4 class="cart-item-name" title="${item.name}">${item.name}</h4>
-            <span class="cart-item-unit-price">${formatBRL(item.price)} cada</span>
-          </div>
-          <div class="cart-item-controls">
-            <div class="cart-stepper">
-              <button class="cart-step-btn btn-qty-minus" data-id="${item.id}" aria-label="Diminuir quantidade">&minus;</button>
-              <span class="cart-step-qty">${item.qty}</span>
-              <button class="cart-step-btn btn-qty-plus" data-id="${item.id}" aria-label="Aumentar quantidade">&plus;</button>
+      cartItemsList.innerHTML = cart.map(item => {
+        const itemImgSrc = resolveProductImage(item.name, item.img);
+        return `
+          <div class="cart-item-row" data-id="${item.id}">
+            <img src="${itemImgSrc}" alt="${item.name}" class="cart-item-img" loading="lazy" onerror="this.onerror=null; this.src='assets/images/logo.png';">
+            <div class="cart-item-info">
+              <h4 class="cart-item-name" title="${item.name}">${item.name}</h4>
+              <span class="cart-item-unit-price">${formatBRL(item.price)} cada</span>
             </div>
-            <span class="cart-item-total">${formatBRL(item.price * item.qty)}</span>
-            <button class="cart-item-remove btn-item-delete" data-id="${item.id}" aria-label="Remover item">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="3 6 5 6 21 6"></polyline>
-                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-              </svg>
-            </button>
+            <div class="cart-item-controls">
+              <div class="cart-stepper">
+                <button class="cart-step-btn btn-qty-minus" data-id="${item.id}" aria-label="Diminuir quantidade">&minus;</button>
+                <span class="cart-step-qty">${item.qty}</span>
+                <button class="cart-step-btn btn-qty-plus" data-id="${item.id}" aria-label="Aumentar quantidade">&plus;</button>
+              </div>
+              <span class="cart-item-total">${formatBRL(item.price * item.qty)}</span>
+              <button class="cart-item-remove btn-item-delete" data-id="${item.id}" aria-label="Remover item">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="3 6 5 6 21 6"></polyline>
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
     }
   };
 
@@ -464,18 +525,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const addToCart = (name, price, img) => {
     if (!name) return;
     const cleanPrice = parsePrice(price);
+    const resolvedImg = resolveProductImage(name, img);
     const existingIndex = cart.findIndex(item => item.name.toLowerCase().trim() === name.toLowerCase().trim());
 
     if (existingIndex > -1) {
       cart[existingIndex].qty += 1;
-      if (img && !cart[existingIndex].img) cart[existingIndex].img = img;
+      cart[existingIndex].img = resolvedImg;
     } else {
       cart.push({
         id: 'item_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
         name: name.trim(),
         price: cleanPrice,
         qty: 1,
-        img: img || ''
+        img: resolvedImg
       });
     }
 
@@ -556,6 +618,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const { totalQty, totalPrice } = getCartTotals();
+
     const nameInput = document.getElementById('cart-input-name');
     const customerName = nameInput ? nameInput.value.trim() : '';
 
@@ -601,7 +665,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    
+    // Disparo confiável para web e mobile
+    const link = document.createElement('a');
+    link.href = whatsappUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(() => {
+      if (link.parentNode) link.parentNode.removeChild(link);
+    }, 100);
   };
 
   if (btnFinalizarWhatsApp) {
